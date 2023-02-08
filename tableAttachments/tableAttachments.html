@@ -1,0 +1,42 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <div class="content-table">
+    <div id="table">
+      <lightning-datatable
+        key-field="id"
+        data={attatchments}
+        columns={columns}
+        onrowselection={clickInRow}
+      >
+      </lightning-datatable>
+    </div>
+    <div class="table-btns">
+      <template if:true={btnFinishAvailable}>
+        <lightning-button
+          variant="brand-outline"
+          label="Finish"
+          title="Primary action with lighter look"
+          onclick={handleFinishClick}
+          class="slds-m-left_x-small"
+        ></lightning-button>
+      </template>
+      <template if:false={btnFinishAvailable}>
+        <lightning-button
+          variant="brand-outline"
+          label="Finish"
+          title="Primary action with lighter look"
+          onclick={handleFinishClick}
+          class="slds-m-left_x-small"
+          disabled
+        ></lightning-button>
+      </template>
+      <lightning-button
+        variant="destructive-text"
+        label="Cancel"
+        title="Destructive action with a lighter look"
+        onclick={handleCancelClick}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+    </div>
+  </div>
+</template>

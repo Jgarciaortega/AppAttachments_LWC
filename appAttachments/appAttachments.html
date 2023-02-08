@@ -1,0 +1,22 @@
+<template>
+    <lightning-layout multiple-rows="true">
+      <lightning-layout-item padding="around-small" size="12">
+        <div class="slds-modal__header">
+          <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Attachments Linker</h1>
+        </div>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small" size="12">
+        <c-selectors
+          onrecordselection={setRecordSelected}
+        ></c-selectors>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small" size="12">
+        <c-table-attachments
+          recordsource={recordsource}
+          record-selected={recordIdselected}
+          onhandlefinishclick={attachmentsToLink}
+          onhandlecancelclick={closeModal}
+        ></c-table-attachments>
+      </lightning-layout-item>
+    </lightning-layout>
+</template>
